@@ -1,0 +1,42 @@
+.clients {
+  display: flex;
+  gap: $base-gap;
+
+  @include tablet-max {
+    flex-wrap: wrap;
+  }
+}
+
+.clients__item {
+  @include mobile-max {
+    flex-basis: calc(100% / 2 - 15px);
+  }
+
+  @include tablet-only {
+    flex-basis: calc(100% / 3 - 20px);
+  }
+
+  @include desktop {
+    flex-basis: calc(100% / 6 - 20px);
+  }
+}
+
+.clients__link {
+  @include centered-flex;
+  height: 92px;
+  color: $svg-base-color;
+  border: 1px solid $svg-base-color;
+  border-radius: 4px;
+  transition: color $duration $timing-function, border-color $duration $timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    border-color: $accent-color;
+  }
+}
+
+.clients__icon {
+  @include sizes(106px, 60px);
+  fill: currentColor;
+}
