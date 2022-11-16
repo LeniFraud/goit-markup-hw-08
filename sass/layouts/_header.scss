@@ -5,9 +5,7 @@
 }
 
 .header__container {
-  @include tablet-min {
-    @include centered-flex($justify: space-between);
-  }
+  @include centered-flex($justify: space-between);
 }
 
 .nav {
@@ -115,8 +113,4 @@
   @include desktop {
     @include sizes(10px, 16px);
   }
-}
-
-.burger {
-  // display: none;
 }
