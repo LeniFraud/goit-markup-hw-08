@@ -103,12 +103,15 @@
 
 .project__desc {
   @include centered-flex();
-
   height: 100%;
   padding: 0 24px;
-  font-size: 18px;
+  font-size: $medium-text-size;
   line-height: 1.56;
   color: $primary-text-color;
+
+  @include mobile-min {
+    font-size: 18px;
+  }
 }
 
 .project__caption {

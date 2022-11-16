@@ -8,18 +8,19 @@
   transform: scale(1);
   transition: transform $duration $timing-function, opacity $duration $timing-function;
 
+  @include tablet-max {
+    margin: 0 auto;
+  }
+
   @include mobile-min {
     max-width: 450px;
   }
 
-  @include mobile-max {
-    margin: 0 auto;
-  }
-
-  @include tablet-min {
+  @include desktop {
     position: absolute;
     top: 50%;
     left: 50%;
+    max-width: 528px;
     transform: translate(-50%, -50%) scale(1);
   }
 
@@ -27,13 +28,9 @@
     opacity: 0;
     transform: scale(0.4);
 
-    @include tablet-min {
+    @include desktop {
       transform: translate(-50%, 80%) scale(0.4);
     }
-  }
-
-  @include desktop {
-    max-width: 528px;
   }
 }
 
@@ -122,6 +119,9 @@
 
 .modal__icon {
   position: absolute;
+}
+
+.modal__icon--personal {
   top: 29px;
   left: 12px;
   @include sizes(18px, 18px);
@@ -152,26 +152,24 @@
   cursor: pointer;
 }
 
-.modal__box {
+.modal__custom-checkbox {
   flex-shrink: 0;
   @include sizes(16px, 15px);
-  border: 2px solid $page-text-color;
-  border-radius: 2px;
+}
 
-  .modal__check:checked + & {
-    background-color: $accent-color;
-    border-color: $accent-color;
+.modal__icon--box {
+  opacity: 1;
+
+  .modal__default-checkbox:checked + .modal__custom-checkbox & {
+    opacity: 0;
   }
 }
 
-.modal__icon--checked {
-  z-index: -1;
-  top: 0;
-  left: 0;
-  @include sizes(16px, 15px);
+.modal__icon--check {
+  opacity: 0;
 
-  .modal__check:checked ~ & {
-    z-index: 2;
+  .modal__default-checkbox:checked + .modal__custom-checkbox & {
+    opacity: 1;
   }
 }
 

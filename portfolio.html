@@ -22,11 +22,11 @@
         </a>
         <button
           type="button"
-          class="menu-toggle js-open-menu"
+          class="mobile-menu__toggle js-open-menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
-          <svg class="menu-toggle__icon">
+          <svg class="mobile-menu__icon">
             <use href="./images/icons.svg#icon-menu-open"></use>
           </svg>
         </button>
@@ -63,6 +63,60 @@
         </ul>
       </div>
     </header>
+    <!-- Мобільне меню -->
+    <div class="mobile-menu js-menu-container" id="mobile-menu">
+      <button type="button" class="mobile-menu__toggle js-close-menu">
+        <svg class="mobile-menu__icon">
+          <use href="./images/icons.svg#icon-menu-close"></use>
+        </svg>
+      </button>
+      <nav>
+        <ul class="mobile-menu__mobile-nav">
+          <li class="mobile-nav__item">
+            <a href="./index.html" class="mobile-nav__link">Студія</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="./portfolio.html" class="mobile-nav__link mobile-nav__link--active"
+              >Портфоліо</a
+            >
+          </li>
+          <li class="mobile-nav__item">
+            <a href="" class="mobile-nav__link">Контакти</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__wrap">
+        <ul class="mobile-menu__mobile-contacts">
+          <li class="mobile-contacts__item">
+            <a href="tel:+380961111111" class="mobile-contacts__link mobile-contacts__link--phone">
+              +38 096 111 11 11
+            </a>
+          </li>
+          <li class="mobile-contacts__item">
+            <a
+              href="mailto:info@devstudio.com"
+              class="mobile-contacts__link mobile-contacts__link--mail"
+            >
+              info@devstudio.com
+            </a>
+          </li>
+        </ul>
+        <ul class="mobile-socials">
+          <li class="mobile-socials__item">
+            <a href="" class="mobile-socials__link">Instagram</a>
+          </li>
+          <li class="mobile-socials__item">
+            <a href="" class="mobile-socials__link">Twitter</a>
+          </li>
+          <li class="mobile-socials__item">
+            <a href="" class="mobile-socials__link">Facebook</a>
+          </li>
+          <li class="mobile-socials__item">
+            <a href="" class="mobile-socials__link">Linkedin</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <main>
       <!-- Портфоліо виконаних проєктів -->
       <section class="section">
@@ -90,8 +144,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project1.jpg"
+                    srcset="
+                      ./images/project1-370.jpg    370w,
+                      ./images/project1-370@2x.jpg 740w,
+                      ./images/project1-354.jpg    354w,
+                      ./images/project1-354@2x.jpg 708w,
+                      ./images/project1-450.jpg    450w,
+                      ./images/project1-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project1-370.jpg"
                     alt="Технокряк"
                     width="370"
                   />
@@ -113,8 +175,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project2.jpg"
+                    srcset="
+                      ./images/project2-370.jpg    370w,
+                      ./images/project2-370@2x.jpg 740w,
+                      ./images/project2-354.jpg    354w,
+                      ./images/project2-354@2x.jpg 708w,
+                      ./images/project2-450.jpg    450w,
+                      ./images/project2-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project2-370.jpg"
                     alt="Постер New Orlean vs Golden Star"
                     width="370"
                   />
@@ -136,8 +206,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project3.jpg"
+                    srcset="
+                      ./images/project3-370.jpg    370w,
+                      ./images/project3-370@2x.jpg 740w,
+                      ./images/project3-354.jpg    354w,
+                      ./images/project3-354@2x.jpg 708w,
+                      ./images/project3-450.jpg    450w,
+                      ./images/project3-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project3-370.jpg"
                     alt="Ресторан Seafood"
                     width="370"
                   />
@@ -159,8 +237,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project4.jpg"
+                    srcset="
+                      ./images/project4-370.jpg    370w,
+                      ./images/project4-370@2x.jpg 740w,
+                      ./images/project4-354.jpg    354w,
+                      ./images/project4-354@2x.jpg 708w,
+                      ./images/project4-450.jpg    450w,
+                      ./images/project4-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project4-370.jpg"
                     alt="Проєкт Prime"
                     width="370"
                   />
@@ -182,8 +268,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project5.jpg"
+                    srcset="
+                      ./images/project5-370.jpg    370w,
+                      ./images/project5-370@2x.jpg 740w,
+                      ./images/project5-354.jpg    354w,
+                      ./images/project5-354@2x.jpg 708w,
+                      ./images/project5-450.jpg    450w,
+                      ./images/project5-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project5-370.jpg"
                     alt="Проєкт Boxes"
                     width="370"
                   />
@@ -205,8 +299,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project6.jpg"
+                    srcset="
+                      ./images/project6-370.jpg    370w,
+                      ./images/project6-370@2x.jpg 740w,
+                      ./images/project6-354.jpg    354w,
+                      ./images/project6-354@2x.jpg 708w,
+                      ./images/project6-450.jpg    450w,
+                      ./images/project6-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project6-370.jpg"
                     alt="Inspiration has no Borders"
                     width="370"
                   />
@@ -228,8 +330,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project7.jpg"
+                    srcset="
+                      ./images/project7-370.jpg    370w,
+                      ./images/project7-370@2x.jpg 740w,
+                      ./images/project7-354.jpg    354w,
+                      ./images/project7-354@2x.jpg 708w,
+                      ./images/project7-450.jpg    450w,
+                      ./images/project7-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project7-370.jpg"
                     alt="Видання Limited Edition"
                     width="370"
                   />
@@ -251,8 +361,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project8.jpg"
+                    srcset="
+                      ./images/project8-370.jpg    370w,
+                      ./images/project8-370@2x.jpg 740w,
+                      ./images/project8-354.jpg    354w,
+                      ./images/project8-354@2x.jpg 708w,
+                      ./images/project8-450.jpg    450w,
+                      ./images/project8-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project8-370.jpg"
                     alt="Проєкт LAB"
                     width="370"
                   />
@@ -274,8 +392,16 @@
               <a href="" class="project__link">
                 <div class="project__wrap">
                   <img
-                    class="project__img"
-                    src="./images/project9.jpg"
+                    srcset="
+                      ./images/project9-370.jpg    370w,
+                      ./images/project9-370@2x.jpg 740w,
+                      ./images/project9-354.jpg    354w,
+                      ./images/project9-354@2x.jpg 708w,
+                      ./images/project9-450.jpg    450w,
+                      ./images/project9-450@2x.jpg 900w
+                    "
+                    sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (min-width: 480px) 450px, 100vw"
+                    src="./images/project9-370.jpg"
                     alt="Growing Business"
                     width="370"
                   />
@@ -381,5 +507,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

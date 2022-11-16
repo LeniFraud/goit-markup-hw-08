@@ -22,11 +22,11 @@
         </a>
         <button
           type="button"
-          class="menu-toggle js-open-menu"
+          class="mobile-menu__toggle js-open-menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
-          <svg class="menu-toggle__icon">
+          <svg class="mobile-menu__icon">
             <use href="./images/icons.svg#icon-menu-open"></use>
           </svg>
         </button>
@@ -64,14 +64,14 @@
       </div>
     </header>
     <!-- Мобільне меню -->
-    <div class="menu-container js-menu-container" id="mobile-menu">
-      <button type="button" class="menu-toggle js-close-menu">
-        <svg class="menu-toggle__icon">
+    <div class="mobile-menu js-menu-container" id="mobile-menu">
+      <button type="button" class="mobile-menu__toggle js-close-menu">
+        <svg class="mobile-menu__icon">
           <use href="./images/icons.svg#icon-menu-close"></use>
         </svg>
       </button>
       <nav>
-        <ul class="mobile-nav">
+        <ul class="mobile-menu__mobile-nav">
           <li class="mobile-nav__item">
             <a href="./index.html" class="mobile-nav__link mobile-nav__link--active">Студія</a>
           </li>
@@ -83,8 +83,8 @@
           </li>
         </ul>
       </nav>
-      <div class="mobile-media">
-        <ul class="mobile-contacts">
+      <div class="mobile-menu__wrap">
+        <ul class="mobile-menu__mobile-contacts">
           <li class="mobile-contacts__item">
             <a href="tel:+380961111111" class="mobile-contacts__link mobile-contacts__link--phone">
               +38 096 111 11 11
@@ -120,12 +120,14 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero__title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="hero__btn" data-modal-open>Замовити послугу</button>
+          <button type="button" class="hero__btn" aria-controls="modal-window" data-modal-open>
+            Замовити послугу
+          </button>
         </div>
       </section>
       <!-- Модальне вікно -->
       <div class="overlay is-hidden" data-modal>
-        <div class="modal">
+        <div class="modal" id="modal-window">
           <button type="button" data-modal-close class="modal__btn-close">
             <svg class="modal__icon-close">
               <use href="./images/icons.svg#icon-close"></use>
@@ -137,21 +139,21 @@
               <label class="modal__field">
                 <span class="modal__label">Ім'я</span>
                 <input type="text" name="name" placeholder=" " class="modal__input" />
-                <svg class="modal__icon">
+                <svg class="modal__icon modal__icon--personal">
                   <use href="./images/icons.svg#icon-person"></use>
                 </svg>
               </label>
               <label class="modal__field">
                 <span class="modal__label">Телефон</span>
                 <input type="tel" name="tel" placeholder=" " class="modal__input" />
-                <svg class="modal__icon">
+                <svg class="modal__icon modal__icon--personal">
                   <use href="./images/icons.svg#icon-phone"></use>
                 </svg>
               </label>
               <label class="modal__field">
                 <span class="modal__label">Пошта</span>
                 <input type="email" name="email" placeholder=" " class="modal__input" />
-                <svg class="modal__icon">
+                <svg class="modal__icon modal__icon--personal">
                   <use href="./images/icons.svg#icon-email"></use>
                 </svg>
               </label>
@@ -170,11 +172,14 @@
                 type="checkbox"
                 name="policy"
                 value="policy"
-                class="modal__check visually-hidden"
+                class="modal__default-checkbox visually-hidden"
               />
-              <span class="modal__box"></span>
-              <svg class="modal__icon modal__icon--checked">
-                <use href="./images/icons.svg#icon-check"></use>
+              <svg class="modal__custom-checkbox">
+                <use href="./images/icons.svg#icon-box" class="modal__icon modal__icon--box"></use>
+                <use
+                  href="./images/icons.svg#icon-check"
+                  class="modal__icon modal__icon--check"
+                ></use>
               </svg>
               <b class="modal__text">
                 Погоджуюся з розсилкою та приймаю

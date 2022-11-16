@@ -9,7 +9,7 @@
   transition: opacity $duration $timing-function, visibility $duration $timing-function;
   overflow-y: scroll;
 
-  @include mobile-max {
+  @include tablet-max {
     padding: 93px 15px 0;
   }
 }

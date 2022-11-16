@@ -10,7 +10,7 @@
 }
 
 .features__item {
-  @include tablet-only {
+  @include tablet-min {
     flex-basis: calc((100% - 30px) / 2);
   }
 
