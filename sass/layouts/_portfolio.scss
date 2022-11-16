@@ -3,9 +3,15 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 40px;
-  // @include centered-flex();
-  // gap: 8px;
-  // margin-bottom: 50px;
+
+  @include tablet-min {
+    @include centered-flex();
+    margin-bottom: 30px;
+  }
+
+  @include desktop {
+    margin-bottom: 50px;
+  }
 }
 
 .filter__btn {
@@ -33,9 +39,11 @@
 }
 
 .projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  @include tablet-min {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
   // column-gap: $base-gap;
   // row-gap: $base-gap;
 }
@@ -43,8 +51,19 @@
 .project__item {
   display: flex;
 
-  // display: flex;
-  // width: calc((100% - 30px * 2) / 3);
+  &:not(last-child) {
+    @include mobile-max {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include tablet-min {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+
+  @include desktop {
+    flex-basis: calc((100% - 30px * 2) / 3);
+  }
 }
 
 .project__link {
@@ -107,47 +126,3 @@
   line-height: 1.88;
   color: $secondary-text-color;
 }
-
-////////////////////////////////
-
-// .filter {
-//   @include centered-flex();
-//   gap: 8px;
-//   margin-bottom: 50px;
-// }
-
-// .filter__btn {
-//   padding: 6px 22px;
-//   font-weight: 500;
-//   font-size: $medium-text-size;
-//   line-height: 1.62;
-//   text-align: center;
-//   letter-spacing: inherit;
-//   color: currentColor;
-//   cursor: pointer;
-//   background-color: $secondary-bg-color;
-//   border: none;
-//   border-radius: 4px;
-//   transition: color $duration $timing-function, background-color $duration $timing-function,
-//     box-shadow $duration $timing-function;
-
-//   &:hover,
-//   &:focus {
-//     color: $primary-text-color;
-//     background-color: $accent-color;
-//     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-//       0px 2px 2px rgba(0, 0, 0, 0.12);
-//   }
-// }
-
-// .projects {
-//   display: flex;
-//   flex-wrap: wrap;
-//   column-gap: $base-gap;
-//   row-gap: $base-gap;
-// }
-
-// .project__item {
-//   display: flex;
-//   width: calc((100% - 30px * 2) / 3);
-// }
