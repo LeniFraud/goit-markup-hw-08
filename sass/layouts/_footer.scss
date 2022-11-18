@@ -73,6 +73,10 @@
 }
 
 .footer__subscription {
+  @include tablet-min {
+    min-width: 450px;
+  }
+
   @include desktop {
     min-width: 570px;
     margin-left: auto;
